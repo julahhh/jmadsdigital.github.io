@@ -3,46 +3,48 @@
 /*=====================================================================================================*/
 .site-header {
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
   right: 0;
 
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .header-inner {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  place-items: center;
-  gap: 12px;
-  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20 px;
+
+  padding: 16px 40px;
 }
 
 .topbar__nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 75px;
+  gap: 18px;
 }
 
 /* Header links */
 .navlink {
-  color: #fff;
+color: #ffffff;
   text-decoration: none;
-  font: 700 "Arial Black", Arial, sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.18em;
-  opacity: 0.9;
+  font: 600 14px Arial, sans-serif;
+  letter-spacing: 0.12em;
 
-  border: white solid 1px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    transition: color 220ms ease, background 220ms ease, opacity 220ms ease;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.7);
+
+  background: transparent;
+  transition: all 220ms ease;
 }
 
-.navlink:hover { opacity: 1; }
+.navlink:hover {
+  background: #e6d5c3;   /* soft beige fill */
+  color: #3a2e25;        /* darker text */
+  border-color: #e6d5c3;
+}
 
 .navlink.is-active {
   text-decoration: bold underline;
