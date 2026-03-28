@@ -15,39 +15,39 @@
     - Mobile hamburger menu included
     ===================================================== -->
     <header class="site-header" id="siteHeader">
-    <div class="header-inner">
+        <div class="header-inner">
+            <!-- nav links -->
+            <nav class="topbar__nav">
+                <a class="navlink <?= $activePage === 'about' ? 'is-active' : '' ?>" href="/about">about</a>
+                <a class="navlink <?= $activePage === 'portfolio' ? 'is-active' : '' ?>" href="/portfolio">portfolio</a>
+                <a class="navlink <?= $activePage === 'resume' ? 'is-active' : '' ?>" href="/resume">resume</a>
+                <a class="navlink <?= $activePage === 'contact' ? 'is-active' : '' ?>" href="/contact">contact</a>
+            </nav>
 
-        <!-- nav links -->
-        <nav class="topbar__nav">
-            <a class="navlink <?= $activePage === 'about' ? 'is-active' : '' ?>" href="/about">about</a>
-            <a class="navlink <?= $activePage === 'portfolio' ? 'is-active' : '' ?>" href="/portfolio">portfolio</a>
-            <a class="navlink <?= $activePage === 'resume' ? 'is-active' : '' ?>" href="/resume">resume</a>
-            <a class="navlink <?= $activePage === 'contact' ? 'is-active' : '' ?>" href="/contact">contact</a>
-        </nav>
+            <!-- Hamburger button for mobile navigation -->
+            <button
+                class="navtoggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+                <span class="navtoggle__bar"></span>
+                <span class="navtoggle__bar"></span>
+                <span class="navtoggle__bar"></span>
+                <span class="navtoggle__bar"></span>
+            </button>
+            </nav>
 
-        <!-- Hamburger button for mobile navigation -->
-        <button
-            class="navtoggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobileMenu"
-        >
-            <span class="navtoggle__bar"></span>
-            <span class="navtoggle__bar"></span>
-            <span class="navtoggle__bar"></span>
-        </button>
-        </nav>
+        </div>
 
-    </div>
-
-    <!-- Mobile navigation menu (hidden by default) -->
-    <div id="mobileMenu" class="mobilemenu" hidden>
-        <a href="/about">about</a>
-        <a href="/portfolio">portfolio</a>
-        <a href="/resume">resume</a>
-        <a href="/contact">contact</a>
-    </div>
+        <!-- Mobile navigation menu (hidden by default) -->
+        <div id="mobileMenu" class="mobilemenu" hidden>
+            <a href="/about">about</a>
+            <a href="/portfolio">portfolio</a>
+            <a href="/resume">resume</a>
+            <a href="/contact">contact</a>
+        </div>
 
     </header>
     <div class="container">
@@ -61,6 +61,9 @@
             target="_top"
             method="POST"
             >
+            <div class="fs-heading">
+                <h3>Contact Me</h3>
+            </div>
             <div class="fs-field">
                 <label class="fs-label" for="name">Name</label>
                 <input class="fs-input" id="name" name="name" required />
@@ -72,81 +75,16 @@
             <div class="fs-field">
                 <label class="fs-label" for="message">Inquiry Message</label>
                 <textarea
-                class="fs-textarea"
-                id="message"
-                name="message"
-                required
+                    class="fs-textarea"
+                    id="message"
+                    name="message"
+                    required
                 ></textarea>
             </div>
             <div class="fs-button-group">
-                <button class="fs-button" type="submit">Submit</button>
+                <button class="fs-button" type="submit">Send Message</button>
             </div>
         </form>
     </div>
 </body>
 </html>
-
-
-/* java script for contact form */
-<script>
-   /* =====================================================
-  Header + Navigation Behavior Script
-  Handles:
-  • Sticky header style change on scroll
-  • Mobile hamburger menu open/close
-  • Closing menu on: link click, Escape key, resize desktop
-  ===================================================== */
-  (function () {
-    const header = document.getElementById('siteHeader');
-    const btn = document.querySelector('.navtoggle');
-    const menu = document.getElementById('mobileMenu');
-
-    // Header scroll behavior
-    // Add/remove "is-scrolled" class based on scroll position
-    if (header) {
-      const setScrolled = () => {
-        if (window.scrollY > 30) header.classList.add('is-scrolled');
-        else header.classList.remove('is-scrolled');
-      };
-      setScrolled();
-      window.addEventListener('scroll', setScrolled, { passive: true });
-    }
-
-    // Mobile menu toggle
-    if (!btn || !menu) return;
-
-    const closeMenu = () => {
-      btn.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('hidden', '');
-    };
-
-    const openMenu = () => {
-      btn.setAttribute('aria-expanded', 'true');
-      menu.removeAttribute('hidden');
-    };
-
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      if (isOpen) closeMenu();
-      else openMenu();
-    });
-
-    // Close when a menu link is clicked
-    menu.addEventListener('click', (e) => {
-      if (e.target && e.target.tagName === 'A') closeMenu();
-    });
-
-    // Close on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // Close when resizing desktop width
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 860) closeMenu();
-    });
-
-    // Ensure menu is closed on initial load
-    closeMenu();
-  })();
-</script>
