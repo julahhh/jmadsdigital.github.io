@@ -3,87 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMadsDigital</title>
-    
+    <title>Julia Chickonski – Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- =====================================================
-    Sticky Header / Navigation
-    - Fixed header overlays hero image
-    - Desktop nav left/right with centered logo
-    - Mobile hamburger menu included
-    ===================================================== -->
-    <header class="site-header" id="siteHeader">
-        <div class="header-inner">
-            <!-- nav links -->
-            <nav class="topbar__nav">
-                <a class="navlink <?= $activePage === 'about' ? 'is-active' : '' ?>" href="/about">about</a>
-                <a class="navlink <?= $activePage === 'portfolio' ? 'is-active' : '' ?>" href="/portfolio">portfolio</a>
-                <a class="navlink <?= $activePage === 'resume' ? 'is-active' : '' ?>" href="/resume">resume</a>
-                <a class="navlink <?= $activePage === 'contact' ? 'is-active' : '' ?>" href="/contact">contact</a>
-            </nav>
-
-            <!-- Hamburger button for mobile navigation -->
-            <button
-                class="navtoggle"
-                type="button"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="mobileMenu"
-            >
-                <span class="navtoggle__bar"></span>
-                <span class="navtoggle__bar"></span>
-                <span class="navtoggle__bar"></span>
-                <span class="navtoggle__bar"></span>
-            </button>
-
-        </div>
-
-        <!-- Mobile navigation menu (hidden by default) -->
-        <div id="mobileMenu" class="mobilemenu" hidden>
-            <a href="/about">about</a>
-            <a href="/portfolio">portfolio</a>
-            <a href="/resume">resume</a>
-            <a href="/contact">contact</a>
-        </div>
-
-    </header>
-    <div class="container">
-        <h1>Welcome!</h1>
-        <p>Thank you for visiting JMadsDigital</p>
+ 
+<!-- FIXED NAV -->
+<nav class="topnav" id="mainNav">
+    <a href="#home"     class="active">home</a>
+    <a href="#about"     class="active">about</a>
+    <a href="#portfolio">portfolio</a>
+    <a href="#resume">resume</a>
+    <a href="#contact">contact</a>
+</nav>
+ 
+<!-- ── SECTION 1 — ABOUT HERO ── -->
+<section id="home">
+    <div class="desktop-icons">
+        <div class="icon i-trash"><div class="trash-icon">🗑️</div><span>Recycle Bin</span></div>
+        <div class="icon i-ie"><div class="ie-icon">e</div><span>Explore</span></div>
+        <div class="icon i-cherry"><div class="thumb dog">🐕</div><span>Cherry.png</span></div>
+        <div class="icon i-cjpg1"><div class="thumb nature">🌿</div><span>Culture.jpg</span></div>
+        <div class="icon i-cjpg2"><div class="thumb photo">🖼️</div><span>Culture.jpg</span></div>
+        <div class="icon i-cjpg3"><div class="thumb photo">🖼️</div><span>Culture.jpg</span></div>
+        <div class="icon i-finder"><div class="finder-icon">🔍</div><span>Finder</span></div>
+        <div class="icon i-cjpg4"><div class="thumb photo">🐱</div><span>Culture.jpg</span></div>
+        <div class="icon i-penny"><div class="thumb cat">🐈</div><span>penny.jpg</span></div>
+        <div class="icon i-folder"><div class="folder-icon"></div><span>Culture</span></div>
+        <div class="icon i-cjpg5"><div class="thumb photo">🖼️</div><span>Culture.jpg</span></div>
     </div>
-    <div class="contact-form">
-        <form
-            action="https://formspree.io/f/xwvwvbza"
-            class="fs-form"
-            target="_top"
-            method="POST"
-            >
-            <div class="fs-heading">
-                <h3>Contact Me</h3>
+    <div class="hero-photo">
+        <!-- Replace src with your actual photo -->
+        <img src="https://via.placeholder.com/260x360/c8b5a0/3b2314?text=Julia" alt="Julia Chickonski">
+    </div>
+</section>
+ 
+<!-- ── SECTION 2 — ABOUT ME INFO ── -->
+<section id="about">
+    <div class="home-left">
+        <h1>Julia Chickonski</h1>
+        <div class="home-left-placeholder"></div>
+        <div class="subtitle-badge">Software Engineer &amp;<br>Web Developer</div>
+    </div>
+    <div class="home-right">
+        <div class="about-card">
+            <h2>About Me</h2>
+            <p>Recent Software Engineering graduate with hands-on experience in front-end development, database design, and agile methodologies. Passionate about building intuitive, efficient applications and contributing to collaborative development teams. I'm open to talking about new projects you have in mind. Reach out!</p>
+            <div class="about-btns">
+                <a class="btn-outline" href="#resume">Resume</a>
+                <a class="btn-outline" href="#home">Portfolio</a>
             </div>
-            <div class="fs-field">
-                <label class="fs-label" for="name">Name</label>
-                <input class="fs-input" id="name" name="name" required />
+        </div>
+        <div class="linkedin-wrap">
+            <a href="https://linkedin.com" target="_blank">in</a>
+        </div>
+    </div>
+</section>
+ 
+<!-- ── SECTION 3 — PORTFOLIO ── -->
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <p class="portfolio-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et est a dui semper facilisis. Pellentesque placerat elit a nunc. Nullam tortor odio, rutrum quis, egestas id, posuere sed, felis. Vestibulum placerat feugiat nisl. Suspendisse lacinia, odio non feugiat vestibulum, sem erat blandit metus, ac nonummy magna odio pharetra diam. Vivamus vehicula velit non metus faucibus auctor. Nam ad augue. Donec orci. Cras eget diam at dolor dapibus sollicitudin. In lacinia, felis vitae laoreet ultrices, lectus ligula dictum dui, eget condimentum velit dui vitae arcu. Nulla nonummy augue nec pede. Pellentesque at nulla. Donec ac libero. Pellentesque at nisl ac nisl fermentum viverra. Praesent odio. Phasellus tincidunt diam ut ipsum. Donec eget est.
+    </p>
+    <a class="pill-link" href="#contact">contact</a>
+</section>
+ 
+<!-- ── SECTION 4 — RESUME ── -->
+<section id="resume">
+    <div class="resume-left">
+        <h2>Resume</h2>
+        <a class="download-btn" href="docs/Julia M. Chickonski Resume.pdf" download>Download</a>
+        <div class="resume-photo-placeholder">📷</div>
+    </div>
+    <div class="resume-right">
+        <div class="resume-section">
+            <div class="resume-section-title">Education</div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-year">2025</span>
+                    <span class="resume-role">Bachelor of Science in Software Engineering</span>
+                </div>
+                <div class="edu-detail">Florida Gulf Coast University</div>
+                <div class="edu-detail">Minor in Mathematics</div>
+                <div class="edu-detail">Treasurer, Volleyball Club</div>
             </div>
-            <div class="fs-field">
-                <label class="fs-label" for="email">Email Address</label>
-                <input class="fs-input" id="email" name="email" required />
+        </div>
+        <div class="resume-section">
+            <div class="resume-section-title">Experience</div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-year">2020</span>
+                    <span class="resume-role">Digital Platform Developer</span>
+                </div>
+                <div class="resume-company">Advanced Plumbing Technologies</div>
+                <ul class="resume-bullets">
+                    <li>Created digital platform for analyzing municipal pipelining data</li>
+                </ul>
             </div>
-            <div class="fs-field">
-                <label class="fs-label" for="message">Inquiry Message</label>
-                <textarea
-                    class="fs-textarea"
-                    id="message"
-                    name="message"
-                    required
-                ></textarea>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-year">2024</span>
+                    <span class="resume-role">Software Developer</span>
+                </div>
+                <div class="resume-company">Stellar Records</div>
+                <ul class="resume-bullets">
+                    <li>Developed an inventory management system for a record store tracking all store stock and online purchases through a robust online platform.</li>
+                </ul>
             </div>
-            <div class="fs-button-group">
-                <button class="fs-button" type="submit">Send Message</button>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-year">2025</span>
+                    <span class="resume-role">Web Developer</span>
+                </div>
+                <div class="resume-company">Florida SEO Agency</div>
+                <ul class="resume-bullets">
+                    <li>Developed automation strategies utilizing Gemini AI features to enhance workflow and produce SEO-optimized data, resulting in thousands of monthly clicks to the site.</li>
+                </ul>
             </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- ── SECTION 5 — CONTACT ── -->
+<section id="contact">
+    <div class="desktop-icons" style="pointer-events:none;">
+        <div class="icon ci-ie"><div class="ie-icon">e</div><span>Explore</span></div>
+        <div class="icon ci-cjpg1"><div class="thumb photo">🖼️</div><span>Culture.jpg</span></div>
+        <div class="icon ci-cjpg2"><div class="thumb nature">🌿</div><span>Culture.jpg</span></div>
+        <div class="icon ci-cjpg3"><div class="thumb photo">🐱</div><span>Culture.jpg</span></div>
+        <div class="icon ci-folder"><div class="folder-icon"></div><span>Culture</span></div>
+    </div>
+    <div class="contact-modal">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xwvwvbza" method="POST" target="_top">
+            <div class="form-field">
+                <label class="form-label" for="c-name">Name</label>
+                <input class="form-input" id="c-name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="c-email">Enter your email</label>
+                <input class="form-input" id="c-email" name="email" type="email" placeholder="you@email.com" required>
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="c-msg">Message</label>
+                <textarea class="form-textarea" id="c-msg" name="message" placeholder="Your message..." required></textarea>
+            </div>
+            <button class="send-btn" type="submit">Send</button>
         </form>
+        <p class="form-disclaimer">Your Canva profile name will be shared. Never submit passwords.</p>
     </div>
+</section>
+ 
+<script>
+    // Highlight active nav link based on which section is in view
+    const navLinks = document.querySelectorAll('#mainNav a');
+ 
+    const sectionMap = Array.from(navLinks).map(a => ({
+        link: a,
+        section: document.querySelector(a.getAttribute('href'))
+    })).filter(o => o.section);
+ 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const match = sectionMap.find(o => o.section === entry.target);
+                if (match) match.link.classList.add('active');
+            }
+        });
+    }, { threshold: 0.4 });
+ 
+    sectionMap.forEach(o => observer.observe(o.section));
+</script>
+ 
 </body>
 </html>
